@@ -84,7 +84,7 @@ const displayDetails=(details)=>{
 // console.log(details);
 
     const phoneDetails=document.getElementById('details')
-    phoneDetails.innerText=''
+    
     
     
     phoneDetails.innerHTML=`
@@ -99,9 +99,15 @@ const displayDetails=(details)=>{
     <h6>ChipSet: ${details.mainFeatures.chipSet}</h6>
     <h6>DisplaySize:${details.mainFeatures.displaySize}</h6>
     <h6>Memory: ${details.mainFeatures.memory}</h6>
-    <h6>Sensor: ${details.mainFeatures.sensors}</h6>
+    <h6>Sensor</h6>
+    <p> ${details.mainFeatures.sensors[0]}</p>
+    <p> ${details.mainFeatures.sensors[1]}</p>
+    <p> ${details.mainFeatures.sensors[2]}</p>
+    <p> ${details.mainFeatures.sensors[3]}</p>
+    <p> ${details.mainFeatures.sensors[4]}</p>
+    <p> ${details.mainFeatures.sensors[5]}</p>
     <h5 class="text-center">Others</h5>
-    <h6>Bluetooth:${details.others.Bluetooth?others.Bluetooth :"no data"}</h6>
+    <h6>Bluetooth:${details.others.Bluetooth?details.others.Bluetooth :"no data"}</h6>
     <h6>GPS:${details.others.GPS?details.others.GPS :"No data"}</h6>
     <h6>NFC: ${details.others.NFC?details.others.NFC:"No Data"}</h6>
     <h6>Radio:${details.others.Radio?details.others.Radio:"No Data"}</h6>
