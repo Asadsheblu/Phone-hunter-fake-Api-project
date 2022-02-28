@@ -22,7 +22,7 @@ if(searchText==''){
    return
 }
 else{
-    //api access 
+    //api access & get data from search box
   fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
   .then(res=>res.json())
   .then(data=>displayData(data.data))
@@ -33,7 +33,7 @@ else{
 //function for display data
 
 const displayData=(datas)=>{
-    console.log(datas);
+    //spinner function call
     toggler('block')
     const searchResult=document.getElementById('search-result')
     searchResult.textContent=''
@@ -49,8 +49,8 @@ const displayData=(datas)=>{
     }
     else{
         datas.slice(0,20)?.forEach(data=>{
-            console.log(data);
-            // console.log(data.phone_name);
+            
+           
             const div=document.createElement('div')
             div.classList.add('col')
             div.innerHTML=`
@@ -84,7 +84,7 @@ const displayDetails=(details)=>{
 // console.log(details);
 
     const phoneDetails=document.getElementById('details')
-    phoneDetails.textContent=''
+    phoneDetails.innerText=''
     
     
     phoneDetails.innerHTML=`
@@ -101,21 +101,16 @@ const displayDetails=(details)=>{
     <h6>Memory: ${details.mainFeatures.memory}</h6>
     <h6>Sensor: ${details.mainFeatures.sensors}</h6>
     <h5 class="text-center">Others</h5>
-    <h6>Bluetooth: ${details.others?.Bluetooth}</h6>
-    <h6>GPS:${details.others?.GPS}</h6>
-    <h6>NFC: ${details.others?.NFC}</h6>
-    <h6>Radio:${details.others?.Radio}</h6>
-    <h6>USB: ${details.others?.USB}</h6>
-    <h6>WLAN: ${details.others?.WLAN}</h6>
+    <h6>Bluetooth:${details.others.Bluetooth?others.Bluetooth :"no data"}</h6>
+    <h6>GPS:${details.others.GPS?details.others.GPS :"No data"}</h6>
+    <h6>NFC: ${details.others.NFC?details.others.NFC:"No Data"}</h6>
+    <h6>Radio:${details.others.Radio?details.others.Radio:"No Data"}</h6>
+    <h6>USB: ${details.others.USB?details.others.USB:"no data"}</h6>
+    <h6>WLAN: ${details.others.WLAN?details.others.WLAN:"no data"}</h6>
     
     
    
     
   </div>
-
-    
-    `
-    
-
-
+`   
 }
