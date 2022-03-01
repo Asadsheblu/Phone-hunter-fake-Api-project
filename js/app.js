@@ -58,8 +58,8 @@ const displayData=(datas)=>{
             <div class="card m-3 shadow-lg bg-light">
             <img  class='img-fluid w-75' src="${data.image}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h4 class="card-title">${data.phone_name}</h4>
-              <h5 class="card-title">${data.brand}</h5>
+              <h4 class="card-title">Name:${data.phone_name}</h4>
+              <h5 class="card-title">Brand:${data.brand}</h5>
               <button  class="btn btn-success" onclick="details('${data.slug}')"><a class=" text-decoration-none text-light" href="#details">Details</a></button>
               
             </div>
@@ -102,7 +102,7 @@ const displayDetails=(details)=>{
                </div>
                <div class="col-md-8">
                     <div class="card-body">
-                    <h5 class="card-title">${details.name}</h5>
+                    <h5 class="card-title">Name:${details.name}</h5>
                     <h5 class="card-title">${details.releaseDate ? details.releaseDate : "no release date found"}</h5>
                     <h5 class="text-center">MainFeatures</h5>
                     <h6>ChipSet: ${details.mainFeatures.chipSet}</h6>
