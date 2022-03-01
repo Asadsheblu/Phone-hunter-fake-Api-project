@@ -33,6 +33,7 @@ else{
 //function for display data
 
 const displayData=(datas)=>{
+  // console.log(datas);
     //spinner function call
     toggler('block')
     const searchResult=document.getElementById('search-result')
@@ -89,11 +90,15 @@ const displayDetails=(details)=>{
     const div=document.createElement('div')
     
     div.innerHTML=`
-    <div class="row g-0">
+    
+    <div id="details" class="card mb-3" style="max-width: 540px;">
+                
+   
+    <div class="row g-0 ">
                   
                
           <div class="col-md-4">
-          <img class="img-fluid" src="${details.image}" alt="" srcset="">
+          <img class="img-fluid text-center" src="${details.image}" alt="" srcset="">
                </div>
                <div class="col-md-8">
                     <div class="card-body">
@@ -115,6 +120,7 @@ const displayDetails=(details)=>{
                     <h6>WLAN: ${details.others.WLAN}</h6>
                     </div>
             </div> 
+         </div>
          </div>
 `   
 phoneDetails.appendChild(div)
