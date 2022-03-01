@@ -98,7 +98,7 @@ const displayDetails=(details)=>{
                   
                
           <div class="col-md-4">
-          <img class="img-fluid text-center" src="${details.image}" alt="" srcset="">
+          <img class="img-fluid ms-5" src="${details.image}" alt="" srcset="">
                </div>
                <div class="col-md-8">
                     <div class="card-body">
