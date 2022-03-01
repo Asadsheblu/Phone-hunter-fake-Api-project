@@ -55,11 +55,11 @@ const displayData=(datas)=>{
             const div=document.createElement('div')
             div.classList.add('col')
             div.innerHTML=`
-            <div class="card m-3 shadow-lg bg-light">
-            <img  class='img-fluid w-75' src="${data.image}" class="card-img-top" alt="...">
+            <div class="card m-3  shadow-lg bg-light">
+            <img  class='img-fluid w-50 ms-5' src="${data.image}" class="card-img-top" alt="...">
             <div class="card-body">
               <h4 class="card-title">Name:${data.phone_name}</h4>
-              <h5 class="card-title">Brand:${data.brand}</h5>
+              <h5 class="card-title ">Brand:${data.brand}</h5>
               <button  class="btn btn-success" onclick="details('${data.slug}')"><a class=" text-decoration-none text-light" href="#details">Details</a></button>
               
             </div>
@@ -91,10 +91,10 @@ const displayDetails=(details)=>{
     
     div.innerHTML=`
     
-    <div id="details" class="card mb-3" style="max-width: 540px;">
+    <div  class="card ms-5 mb-3" style="max-width: 540px;">
                 
    
-    <div class="row g-0 ">
+    <div class="row g-0 shadow-lg ">
                   
                
           <div class="col-md-4">
@@ -123,5 +123,5 @@ const displayDetails=(details)=>{
          </div>
          </div>
 `   
-phoneDetails.appendChild(div)
+        phoneDetails.appendChild(div)
 }
