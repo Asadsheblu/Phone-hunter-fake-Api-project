@@ -86,7 +86,7 @@ const displayDetails=(details)=>{
 
     const phoneDetails=document.getElementById('details')
     
-    phoneDetails.textContent=''
+    phoneDetails.innerText=' '
     const div=document.createElement('div')
     
     div.innerHTML=`
@@ -98,7 +98,7 @@ const displayDetails=(details)=>{
                   
                
           <div class="col-md-4">
-          <img class="img-fluid ms-3" src="${details.image}" alt="" srcset="">
+          <img class="img-fluid mt-2 ms-3" src="${details.image}" alt="" srcset="">
                </div>
                <div class="col-md-8">
                     <div class="card-body">
