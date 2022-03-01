@@ -12,10 +12,10 @@ const phoneSearch=()=>{
   const searchText=search.value ;
   search.value=''
   const errorMsg= document.getElementById('errorMsg')
-  errorMsg.innerText=''
+  errorMsg.textContent=''
   toggler('block')
 //error handeling
-if(searchText==''){
+if(searchText===''){
    
    errorMsg.innerHTML='Please Search Any Kinds Of Phone Name'
    toggler('none')
@@ -48,7 +48,7 @@ const displayData=(datas)=>{
       return
     }
     else{
-        datas.slice(0,20)?.forEach(data=>{
+        datas.slice(1,21)?.forEach(data=>{
             
            
             const div=document.createElement('div')
@@ -85,38 +85,37 @@ const displayDetails=(details)=>{
 
     const phoneDetails=document.getElementById('details')
     
+    phoneDetails.textContent=''
+    const div=document.createElement('div')
     
-    
-    phoneDetails.innerHTML=`
-    
-    
-    <div class="col-md-12 shadow-lg ">
-    <img class="img-fluid" src="${details.image}" alt="" srcset="">
-  <div class="card-body">
-    <h5 class="card-title">${details.name}</h5>
-    <h5 class="card-title">${details.releaseDate ? details.releaseDate : "no release date found"}</h5>
-    <h5 class="text-center">MainFeatures</h5>
-    <h6>ChipSet: ${details.mainFeatures.chipSet}</h6>
-    <h6>DisplaySize:${details.mainFeatures.displaySize}</h6>
-    <h6>Memory: ${details.mainFeatures.memory}</h6>
-    <h6>Sensor</h6>
-    <p> ${details.mainFeatures.sensors[0]}</p>
-    <p> ${details.mainFeatures.sensors[1]}</p>
-    <p> ${details.mainFeatures.sensors[2]}</p>
-    <p> ${details.mainFeatures.sensors[3]}</p>
-    <p> ${details.mainFeatures.sensors[4]}</p>
-    <p> ${details.mainFeatures.sensors[5]}</p>
-    <h5 class="text-center">Others</h5>
-    <h6>Bluetooth:${details.others.Bluetooth ?.Bluetooth}</h6>
-    <h6>GPS:${details.others.GPS}</h6>
-    <h6>NFC: ${details.others.NFC}</h6>
-    <h6>Radio:${details.others.Radio}</h6>
-    <h6>USB: ${details.others.USB}</h6>
-    <h6>WLAN: ${details.others.WLAN}</h6>
-    
-    
-   
-    
-  </div>
+    div.innerHTML=`
+    <div class="row g-0">
+                  
+               
+          <div class="col-md-4">
+          <img class="img-fluid" src="${details.image}" alt="" srcset="">
+               </div>
+               <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">${details.name}</h5>
+                    <h5 class="card-title">${details.releaseDate ? details.releaseDate : "no release date found"}</h5>
+                    <h5 class="text-center">MainFeatures</h5>
+                    <h6>ChipSet: ${details.mainFeatures.chipSet}</h6>
+                    <h6>DisplaySize:${details.mainFeatures.displaySize}</h6>
+                    <h6>Memory: ${details.mainFeatures.memory}</h6>
+                    <h6 class="text-center">Sensor</h6>
+                    <h6> ${details.mainFeatures.sensors}</h6>
+                   
+                    <h5 class="text-center">Others</h5>
+                    <h6>Bluetooth:${details.others?.Bluetooth}</h6>
+                    <h6>GPS:${details.others.GPS}</h6>
+                    <h6>NFC: ${details.others.NFC}</h6>
+                    <h6>Radio:${details.others.Radio}</h6>
+                    <h6>USB: ${details.others.USB}</h6>
+                    <h6>WLAN: ${details.others.WLAN}</h6>
+                    </div>
+            </div> 
+         </div>
 `   
+phoneDetails.appendChild(div)
 }
