@@ -107,12 +107,12 @@ const displayDetails=(details)=>{
     <p> ${details.mainFeatures.sensors[4]}</p>
     <p> ${details.mainFeatures.sensors[5]}</p>
     <h5 class="text-center">Others</h5>
-    <h6>Bluetooth:${details.others.Bluetooth?details.others.Bluetooth :"no data"}</h6>
-    <h6>GPS:${details.others.GPS?details.others.GPS :"No data"}</h6>
-    <h6>NFC: ${details.others.NFC?details.others.NFC:"No Data"}</h6>
-    <h6>Radio:${details.others.Radio?details.others.Radio:"No Data"}</h6>
-    <h6>USB: ${details.others.USB?details.others.USB:"no data"}</h6>
-    <h6>WLAN: ${details.others.WLAN?details.others.WLAN:"no data"}</h6>
+    <h6>Bluetooth:${details.others.Bluetooth ?.Bluetooth}</h6>
+    <h6>GPS:${details.others.GPS}</h6>
+    <h6>NFC: ${details.others.NFC}</h6>
+    <h6>Radio:${details.others.Radio}</h6>
+    <h6>USB: ${details.others.USB}</h6>
+    <h6>WLAN: ${details.others.WLAN}</h6>
     
     
    
