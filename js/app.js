@@ -11,6 +11,9 @@ const phoneSearch=()=>{
    const search=document.getElementById('search-box')
   const searchText=search.value ;
   search.value=''
+  const phoneDetails=document.getElementById('details')
+    
+    phoneDetails.innerHTML=''
   const errorMsg= document.getElementById('errorMsg')
   errorMsg.textContent=''
   toggler('block')
@@ -61,13 +64,15 @@ const displayData=(datas)=>{
               <h4 class="card-title">Name:${data.phone_name}</h4>
               <h5 class="card-title ">Brand:${data.brand}</h5>
               <button  class="btn btn-success" onclick="details('${data.slug}')"><a class=" text-decoration-none text-light" href="#details">Details</a></button>
-              
+             
             </div>
           </div>
         </div>
             `
             searchResult.appendChild(div)
+           
         })
+        
         //stop spinner
         toggler('none')
     }
@@ -86,7 +91,7 @@ const displayDetails=(details)=>{
 
     const phoneDetails=document.getElementById('details')
     
-    phoneDetails.innerText=' '
+    phoneDetails.innerHTML=''
     const div=document.createElement('div')
     
     div.innerHTML=`
@@ -112,7 +117,7 @@ const displayDetails=(details)=>{
                     <h6> ${details.mainFeatures.sensors}</h6>
                    
                     <h5 class="text-center">Others</h5>
-                    <h6>Bluetooth:${details.others?.Bluetooth}</h6>
+                    <h6>Bluetooth:${details.others.Bluetooth}?</h6>
                     <h6>GPS:${details.others.GPS}</h6>
                     <h6>NFC: ${details.others.NFC}</h6>
                     <h6>Radio:${details.others.Radio}</h6>
