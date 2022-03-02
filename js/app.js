@@ -117,7 +117,7 @@ const displayDetails=(details)=>{
                     <h6> ${details.mainFeatures.sensors}</h6>
                    
                     <h5 class="text-center">Others</h5>
-                    <h6>Bluetooth:${details.others.Bluetooth}?</h6>
+                    <h6>Bluetooth:${details.others.Bluetooth}</h6>
                     <h6>GPS:${details.others.GPS}</h6>
                     <h6>NFC: ${details.others.NFC}</h6>
                     <h6>Radio:${details.others.Radio}</h6>
